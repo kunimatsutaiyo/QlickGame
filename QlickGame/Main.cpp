@@ -19,6 +19,12 @@ int APIENTRY WinMain(
 	HWND window_handle = window.MakeWindow(hInstance_, 1920, 1080, "ポチポチゲーム");
 	engine.InitEngine(hInstance_, window_handle);
 
+
+	Texture::GetInstance()->LoadTexture("Res/free_enemy.jpg", "enemy");
+
+	Graphics* gp = Graphics::GetInstance();
+
+
 	// メインループ
 	while (true)
 	{
@@ -41,11 +47,30 @@ int APIENTRY WinMain(
 			}
 		}
 		else {
-			
+			// Inputの処理
+					// escキーで終了
+			Input::GetInstance()->Update();
+			if (Input::GetInstance()->GetKey(KEY_TYPE::ESCAPE_KEY))
+			{
+				break;
+			}
+
+			// game処理 //
 
 
 
 
+			// draw処理 //
+			// 描画開始
+			if (gp->StartDraw() == true)
+			{
+				gp->DrawTexture(Texture::GetInstance()->GetTexture("enemy"),
+					100.0f, 100.0f,
+					255,
+					60, 80);
+			}
+			// 描画終了
+			gp->EndDraw();
 		}
 	}
 
