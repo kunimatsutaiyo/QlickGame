@@ -8,6 +8,7 @@
 #include "MyLibrary/Engine/Sound.h"
 
 #include "MyLibrary/Object/EnemyManager.h"
+#include "MyLibrary/Collision/MouseAndRect.h"
 
 int APIENTRY WinMain(
 	HINSTANCE	hInstance_,		// インスタンスハンドル
@@ -22,10 +23,15 @@ int APIENTRY WinMain(
 	engine.InitEngine(hInstance_, window_handle);
 
 
+
 	Texture::GetInstance()->LoadTexture("Res/free_enemy.jpg", "enemy");
 	Graphics* gp = Graphics::GetInstance();
 
 	EnemyManager enemy_manager(2);
+
+	MouseAndRect mouse_and_rect;
+
+
 
 	// メインループ
 	while (true)
@@ -50,15 +56,35 @@ int APIENTRY WinMain(
 		}
 		else {
 			// Inputの処理
-					// escキーで終了
+			// escキーで終了
 			Input::GetInstance()->Update();
 			if (Input::GetInstance()->GetKey(KEY_TYPE::ESCAPE_KEY))
 			{
 				break;
 			}
 
+
+
 			// game処理 //
+			// 敵の更新
 			enemy_manager.Update();
+
+			// 当たり判定
+			if (Input::GetInstance()->OnMouseDown(MouseButton::LEFT))
+			{
+				D3DXVECTOR2 mouse_pos = Input::GetInstance()->GetMousePos();
+				std::vector<Enemy*> vec_enmey = enemy_manager.GetEnemy();
+
+				for (size_t i = 0; i < vec_enmey.size(); i++)
+				{
+					if (mouse_and_rect.Judgment(mouse_pos, vec_enmey[i]->GetPos(), vec_enmey[i]->GetSize()))
+					{
+						enemy_manager.PartDelete(i);
+					}
+				}
+			}
+
+
 
 			// draw処理 //
 			// 描画開始

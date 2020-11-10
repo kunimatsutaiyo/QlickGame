@@ -19,12 +19,18 @@ public:
 	}
 
 public:
-	bool CreateEnemy();
-
 	void Update();
 	void Draw();
 
 	void PartDelete(int delete_number_);
+
+	std::vector<Enemy*> GetEnemy() {
+		return m_p_vec_enemy;
+	}
+
+private:
+	bool CreateEnemy();
+
 	void AllDelete();
 
 private:

@@ -20,6 +20,12 @@ public:
 	void Update();
 	void Draw();
 
+	D3DXVECTOR2 GetPos() {
+		return m_pos;
+	}
+	D3DXVECTOR2 GetSize() {
+		return { 60, 80 };
+	}
 	int GetSurvivalTime() {
 		return m_survival_time;
 	}

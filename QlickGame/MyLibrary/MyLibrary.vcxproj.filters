@@ -25,6 +25,9 @@
     <Filter Include="ソース ファイル\Object">
       <UniqueIdentifier>{4bc9e600-eb06-4095-8816-c5535d9f79c8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Collision">
+      <UniqueIdentifier>{2a032651-3ac1-4b03-bb61-78bb4de4ddb4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -66,6 +69,9 @@
     <ClInclude Include="Object\EnemyManager.h">
       <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
+    <ClInclude Include="Collision\MouseAndRect.h">
+      <Filter>ソース ファイル\Collision</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Engine.cpp">
@@ -100,6 +106,9 @@
     </ClCompile>
     <ClCompile Include="Object\EnemyManager.cpp">
       <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision\MouseAndRect.cpp">
+      <Filter>ソース ファイル\Collision</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
