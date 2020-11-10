@@ -72,76 +72,76 @@ bool CSV::LoadData(std::string str_, std::string key_name_)
 	return false;
 }
 
-bool CSV::WriteData(std::string str_, std::vector<std::string> strvec_)
-{
-	//std::ofstream ofs(str_, std::ios_base::out);
-
-	//// ファイルを開くときに失敗したとき
-	//if (ofs.fail())
-	//{
-	//	//std::cerr << "Failed to open file." << std::endl;
-	//	return -1;
-	//}
-
-	//std::vector<int> score_table;
-	//// ソートする前に文字列を数字にし、全て秒単位にする
-	//for (int i = 0; i < strvec_.size(); i++)
-	//{
-	//	std::vector<int> num;
-	//	for (int j = 0; j < strvec_[i].size(); j++)
-	//	{
-	//		if (strvec_[i][j] == ':')
-	//		{
-	//			continue;
-	//		}
-	//		else {
-	//			// ASCIIコード表の48～57は文字の'0'～'9'に対応しているのでこれを利用する
-	//			num.push_back(strvec_[i][j] - '0');
-	//		}
-	//	}
-	//	// ランキングの表示が分単位なので、秒単位に直して格納
-	//	score_table.push_back((num[0] * 600) + (num[1] * 60) + (num[2] * 10) + (num[3]));
-	//}
-
-	///*
-	//	ソート処理
-	//	並べ替えることができるのは、通常の配列やvector型などの
-	//	ランダムアクセスイテレータが使えるコンテナの中身
-	//	listなどはランダムアクセスできないのでsortはできない
-	//	listには実体にlist::sortという関数が用意されている
-	//*/
-	//std::sort(score_table.begin(), score_table.end());
-
-	//// 0を一番後ろに
-	//int count = 0;
-	//for (int i = 0; i < score_table.size(); i++)
-	//{
-	//	if (score_table[i] == 0)
-	//	{
-	//		score_table.erase(score_table.begin() + i);
-	//		score_table.push_back(0);
-	//		i--;
-	//	}
-	//	count++;
-	//	if (count >= score_table.size())
-	//	{
-	//		break;
-	//	}
-	//}
-
-	//// ランキングの表示が秒単位なので、分単位に戻す
-	//std::vector<std::string> ranking;
-	//ranking = m_math.FixTheMinute(score_table);
-
-	//ofs << "RANKING" << std::endl;
-	//ofs << "Ranking" << ','
-	//	<< ranking[static_cast<int>(RANK::FIRST)] << ','
-	//	<< ranking[static_cast<int>(RANK::SECOND)] << ','
-	//	<< ranking[static_cast<int>(RANK::THIRD)]
-	//	<< std::endl;
-
-	//ofs.close();
-}
+//bool CSV::WriteData(std::string str_, std::vector<std::string> strvec_)
+//{
+//	//std::ofstream ofs(str_, std::ios_base::out);
+//
+//	//// ファイルを開くときに失敗したとき
+//	//if (ofs.fail())
+//	//{
+//	//	//std::cerr << "Failed to open file." << std::endl;
+//	//	return -1;
+//	//}
+//
+//	//std::vector<int> score_table;
+//	//// ソートする前に文字列を数字にし、全て秒単位にする
+//	//for (int i = 0; i < strvec_.size(); i++)
+//	//{
+//	//	std::vector<int> num;
+//	//	for (int j = 0; j < strvec_[i].size(); j++)
+//	//	{
+//	//		if (strvec_[i][j] == ':')
+//	//		{
+//	//			continue;
+//	//		}
+//	//		else {
+//	//			// ASCIIコード表の48～57は文字の'0'～'9'に対応しているのでこれを利用する
+//	//			num.push_back(strvec_[i][j] - '0');
+//	//		}
+//	//	}
+//	//	// ランキングの表示が分単位なので、秒単位に直して格納
+//	//	score_table.push_back((num[0] * 600) + (num[1] * 60) + (num[2] * 10) + (num[3]));
+//	//}
+//
+//	///*
+//	//	ソート処理
+//	//	並べ替えることができるのは、通常の配列やvector型などの
+//	//	ランダムアクセスイテレータが使えるコンテナの中身
+//	//	listなどはランダムアクセスできないのでsortはできない
+//	//	listには実体にlist::sortという関数が用意されている
+//	//*/
+//	//std::sort(score_table.begin(), score_table.end());
+//
+//	//// 0を一番後ろに
+//	//int count = 0;
+//	//for (int i = 0; i < score_table.size(); i++)
+//	//{
+//	//	if (score_table[i] == 0)
+//	//	{
+//	//		score_table.erase(score_table.begin() + i);
+//	//		score_table.push_back(0);
+//	//		i--;
+//	//	}
+//	//	count++;
+//	//	if (count >= score_table.size())
+//	//	{
+//	//		break;
+//	//	}
+//	//}
+//
+//	//// ランキングの表示が秒単位なので、分単位に戻す
+//	//std::vector<std::string> ranking;
+//	//ranking = m_math.FixTheMinute(score_table);
+//
+//	//ofs << "RANKING" << std::endl;
+//	//ofs << "Ranking" << ','
+//	//	<< ranking[static_cast<int>(RANK::FIRST)] << ','
+//	//	<< ranking[static_cast<int>(RANK::SECOND)] << ','
+//	//	<< ranking[static_cast<int>(RANK::THIRD)]
+//	//	<< std::endl;
+//
+//	//ofs.close();
+//}
 
 int CSV::CreateFile()
 {

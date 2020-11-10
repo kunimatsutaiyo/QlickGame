@@ -117,7 +117,7 @@ public:
 	*/
 	//bool WriteData(std::string str_, std::vector<float> vecf_);
 
-	bool WriteData(std::string str_, std::vector<std::string> strvec_);
+	/*bool WriteData(std::string str_, std::vector<std::string> strvec_);*/
 
 private:
 

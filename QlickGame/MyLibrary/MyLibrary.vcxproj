@@ -32,6 +32,7 @@
     <ClInclude Include="Utility\Vec.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Main.cpp" />
     <ClCompile Include="Engine\Camera.cpp" />
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="Engine\Graphics.cpp" />
