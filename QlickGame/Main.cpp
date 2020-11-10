@@ -7,6 +7,8 @@
 #include "MyLibrary/Engine/Texture.h"
 #include "MyLibrary/Engine/Sound.h"
 
+#include "MyLibrary/Object/EnemyManager.h"
+
 int APIENTRY WinMain(
 	HINSTANCE	hInstance_,		// インスタンスハンドル
 	HINSTANCE	hPrevInstance_,	// 旧仕様(NULLが常に入っているので無視)
@@ -21,9 +23,9 @@ int APIENTRY WinMain(
 
 
 	Texture::GetInstance()->LoadTexture("Res/free_enemy.jpg", "enemy");
-
 	Graphics* gp = Graphics::GetInstance();
 
+	EnemyManager enemy_manager(2);
 
 	// メインループ
 	while (true)
@@ -56,18 +58,13 @@ int APIENTRY WinMain(
 			}
 
 			// game処理 //
-
-
-
+			enemy_manager.Update();
 
 			// draw処理 //
 			// 描画開始
 			if (gp->StartDraw() == true)
 			{
-				gp->DrawTexture(Texture::GetInstance()->GetTexture("enemy"),
-					100.0f, 100.0f,
-					255,
-					60, 80);
+				enemy_manager.Draw();
 			}
 			// 描画終了
 			gp->EndDraw();
