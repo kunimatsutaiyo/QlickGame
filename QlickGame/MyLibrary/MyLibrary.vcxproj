@@ -29,6 +29,7 @@
     <ClInclude Include="Engine\Window.h" />
     <ClInclude Include="Object\Enemy.h" />
     <ClInclude Include="Object\EnemyManager.h" />
+    <ClInclude Include="UI\Score.h" />
     <ClInclude Include="UI\TimeLimit.h" />
     <ClInclude Include="Utility\CSV.h" />
     <ClInclude Include="Utility\Singleton.h" />
@@ -47,6 +48,7 @@
     <ClCompile Include="Engine\Window.cpp" />
     <ClCompile Include="Object\Enemy.cpp" />
     <ClCompile Include="Object\EnemyManager.cpp" />
+    <ClCompile Include="UI\Score.cpp" />
     <ClCompile Include="UI\TimeLimit.cpp" />
     <ClCompile Include="Utility\CSV.cpp" />
   </ItemGroup>

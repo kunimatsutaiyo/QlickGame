@@ -10,6 +10,7 @@
 #include "MyLibrary/Object/EnemyManager.h"
 #include "MyLibrary/Collision/MouseAndRect.h"
 #include "MyLibrary/UI/TimeLimit.h"
+#include "MyLibrary/UI/Score.h"
 
 #include <cstdlib>
 
@@ -35,6 +36,8 @@ int APIENTRY WinMain(
 	MouseAndRect mouse_and_rect;
 
 	TimeLimit time_limit(30);
+
+	Score score;
 
 
 
@@ -78,13 +81,18 @@ int APIENTRY WinMain(
 			if (Input::GetInstance()->OnMouseDown(MouseButton::LEFT))
 			{
 				D3DXVECTOR2 mouse_pos = Input::GetInstance()->GetMousePos();
-				std::vector<Enemy*> vec_enmey = enemy_manager.GetEnemy();
+				std::vector<Enemy*> vec_enemy = enemy_manager.GetEnemy();
 
-				for (size_t i = 0; i < vec_enmey.size(); i++)
+				for (size_t i = 0; i < vec_enemy.size(); i++)
 				{
-					if (mouse_and_rect.Judgment(mouse_pos, vec_enmey[i]->GetPos(), vec_enmey[i]->GetSize()))
+					if (mouse_and_rect.Judgment(mouse_pos, vec_enemy[i]->GetPos(), vec_enemy[i]->GetSize()))
 					{
 						enemy_manager.PartDelete(i);
+
+						// ¦•ÏX‰ÓŠ
+						// score‰ÁŽZ‚ð‚±‚±‚Å‚·‚é‚Ì‚Å‚Í‚È‚­’Ê’m‚·‚é‚É•ÏX‚µ‚½‚¢
+						// Score‰ÁŽZ
+						score.AddScore(1);
 					}
 				}
 			}
@@ -111,6 +119,8 @@ int APIENTRY WinMain(
 				// UI•`‰æ
 				// time_limit
 				time_limit.Draw();
+				// score
+				score.Draw();
 			}
 			// •`‰æI—¹
 			gp->EndDraw();

@@ -78,6 +78,9 @@
     <ClInclude Include="UI\TimeLimit.h">
       <Filter>ソース ファイル\UI</Filter>
     </ClInclude>
+    <ClInclude Include="UI\Score.h">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Engine.cpp">
@@ -117,6 +120,9 @@
       <Filter>ソース ファイル\Collision</Filter>
     </ClCompile>
     <ClCompile Include="UI\TimeLimit.cpp">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\Score.cpp">
       <Filter>ソース ファイル\UI</Filter>
     </ClCompile>
   </ItemGroup>

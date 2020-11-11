@@ -17,7 +17,7 @@ void TimeLimit::Draw()
 	int seconds = m_time_limit / 60;
 
 	std::ostringstream oss;
-	oss << seconds;
+	oss << "Time Limit : " << seconds;
 
 	Graphics::GetInstance()->DrawFont(
 		oss.str(),
