@@ -9,6 +9,9 @@
 
 #include "MyLibrary/Object/EnemyManager.h"
 #include "MyLibrary/Collision/MouseAndRect.h"
+#include "MyLibrary/UI/TimeLimit.h"
+
+#include <cstdlib>
 
 int APIENTRY WinMain(
 	HINSTANCE	hInstance_,		// インスタンスハンドル
@@ -30,6 +33,8 @@ int APIENTRY WinMain(
 	EnemyManager enemy_manager(2);
 
 	MouseAndRect mouse_and_rect;
+
+	TimeLimit time_limit(30);
 
 
 
@@ -55,7 +60,7 @@ int APIENTRY WinMain(
 			}
 		}
 		else {
-			// Inputの処理
+			// Inputの処理 //
 			// escキーで終了
 			Input::GetInstance()->Update();
 			if (Input::GetInstance()->GetKey(KEY_TYPE::ESCAPE_KEY))
@@ -84,13 +89,28 @@ int APIENTRY WinMain(
 				}
 			}
 
+			// UI更新
+			// time_limit
+			time_limit.Update();
+
+			// 一時停止
+			if (time_limit.GetTime() <= 0)
+			{
+				system("PAUSE");
+			}
+
 
 
 			// draw処理 //
 			// 描画開始
 			if (gp->StartDraw() == true)
 			{
+				// 敵描画
 				enemy_manager.Draw();
+
+				// UI描画
+				// time_limit
+				time_limit.Draw();
 			}
 			// 描画終了
 			gp->EndDraw();

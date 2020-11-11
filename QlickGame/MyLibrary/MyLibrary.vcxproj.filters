@@ -28,6 +28,9 @@
     <Filter Include="ソース ファイル\Collision">
       <UniqueIdentifier>{2a032651-3ac1-4b03-bb61-78bb4de4ddb4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\UI">
+      <UniqueIdentifier>{5072c13d-9c11-43df-905b-7562c0093c97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -72,6 +75,9 @@
     <ClInclude Include="Collision\MouseAndRect.h">
       <Filter>ソース ファイル\Collision</Filter>
     </ClInclude>
+    <ClInclude Include="UI\TimeLimit.h">
+      <Filter>ソース ファイル\UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine\Engine.cpp">
@@ -109,6 +115,9 @@
     </ClCompile>
     <ClCompile Include="Collision\MouseAndRect.cpp">
       <Filter>ソース ファイル\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="UI\TimeLimit.cpp">
+      <Filter>ソース ファイル\UI</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
