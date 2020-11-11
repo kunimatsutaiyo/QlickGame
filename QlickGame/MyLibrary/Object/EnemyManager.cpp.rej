@@ -1,0 +1,10 @@
+diff a/QlickGame/MyLibrary/Object/EnemyManager.cpp b/QlickGame/MyLibrary/Object/EnemyManager.cpp	(rejected hunks)
+@@ -4,7 +4,7 @@
+ 
+ bool EnemyManager::CreateEnemy()
+ {
+-	// �C���ӏ�
++	// ���C���ӏ�
+ 	// �����_�����W����������
+ 	srand((unsigned)time(NULL));
+ 	D3DXVECTOR2 rand_pos = {
