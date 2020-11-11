@@ -4,7 +4,7 @@
 
 bool EnemyManager::CreateEnemy()
 {
-	// C³‰ÓŠ
+	// ¦C³‰ÓŠ
 	// ƒ‰ƒ“ƒ_ƒ€À•W‚ª‚¨‚©‚µ‚¢
 	srand((unsigned)time(NULL));
 	D3DXVECTOR2 rand_pos = {
