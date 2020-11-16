@@ -4,9 +4,9 @@
 class Score
 {
 public:
-	Score()
+	Score(int init_score_)
 	{
-		m_score = 0;
+		m_score = init_score_;
 	}
 	~Score()
 	{
@@ -15,7 +15,6 @@ public:
 
 public:
 	void AddScore(int score_number_);
-
 	void Draw();
 
 private:

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -29,6 +29,7 @@
     <ClInclude Include="Engine\Window.h" />
     <ClInclude Include="Object\Enemy.h" />
     <ClInclude Include="Object\EnemyManager.h" />
+    <ClInclude Include="Scene\GameScene.h" />
     <ClInclude Include="UI\Score.h" />
     <ClInclude Include="UI\TimeLimit.h" />
     <ClInclude Include="Utility\CSV.h" />
@@ -48,6 +49,7 @@
     <ClCompile Include="Engine\Window.cpp" />
     <ClCompile Include="Object\Enemy.cpp" />
     <ClCompile Include="Object\EnemyManager.cpp" />
+    <ClCompile Include="Scene\GameScene.cpp" />
     <ClCompile Include="UI\Score.cpp" />
     <ClCompile Include="UI\TimeLimit.cpp" />
     <ClCompile Include="Utility\CSV.cpp" />

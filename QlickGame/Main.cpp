@@ -2,17 +2,10 @@
 
 #include "MyLibrary/Engine/Window.h"
 #include "MyLibrary/Engine/Engine.h"
-#include "MyLibrary/Engine/Input.h"
-#include "MyLibrary/Engine/Graphics.h"
-#include "MyLibrary/Engine/Texture.h"
 #include "MyLibrary/Engine/Sound.h"
+#include "MyLibrary/Engine/Input.h"
 
-#include "MyLibrary/Object/EnemyManager.h"
-#include "MyLibrary/Collision/MouseAndRect.h"
-#include "MyLibrary/UI/TimeLimit.h"
-#include "MyLibrary/UI/Score.h"
-
-#include <cstdlib>
+#include "MyLibrary/Scene/GameScene.h"
 
 int APIENTRY WinMain(
 	HINSTANCE	hInstance_,		// インスタンスハンドル
@@ -25,19 +18,15 @@ int APIENTRY WinMain(
 	Engine engine;
 	HWND window_handle = window.MakeWindow(hInstance_, 1920, 1080, "ポチポチゲーム");
 	engine.InitEngine(hInstance_, window_handle);
+	Input* p_input = Input::GetInstance();
 
 
 
-	Texture::GetInstance()->LoadTexture("Res/free_enemy.jpg", "enemy");
-	Graphics* gp = Graphics::GetInstance();
-
-	EnemyManager enemy_manager(2);
-
-	MouseAndRect mouse_and_rect;
-
-	TimeLimit time_limit(30);
-
-	Score score;
+	GameScene game_scene;
+	game_scene.Load();
+	game_scene.CreateEnemyManager();
+	game_scene.CreateScore(0);
+	game_scene.CreateTimeLimit(30);
 
 
 
@@ -65,65 +54,15 @@ int APIENTRY WinMain(
 		else {
 			// Inputの処理 //
 			// escキーで終了
-			Input::GetInstance()->Update();
-			if (Input::GetInstance()->GetKey(KEY_TYPE::ESCAPE_KEY))
+			p_input->Update();
+			if (p_input->GetKey(KEY_TYPE::ESCAPE_KEY))
 			{
 				break;
 			}
 
+			game_scene.Update();
 
-
-			// game処理 //
-			// 敵の更新
-			enemy_manager.Update();
-
-			// 当たり判定
-			if (Input::GetInstance()->OnMouseDown(MouseButton::LEFT))
-			{
-				D3DXVECTOR2 mouse_pos = Input::GetInstance()->GetMousePos();
-				std::vector<Enemy*> vec_enemy = enemy_manager.GetEnemy();
-
-				for (size_t i = 0; i < vec_enemy.size(); i++)
-				{
-					if (mouse_and_rect.Judgment(mouse_pos, vec_enemy[i]->GetPos(), vec_enemy[i]->GetSize()))
-					{
-						enemy_manager.PartDelete(i);
-
-						// ※変更箇所
-						// score加算をここでするのではなく通知するに変更したい
-						// Score加算
-						score.AddScore(1);
-					}
-				}
-			}
-
-			// UI更新
-			// time_limit
-			time_limit.Update();
-
-			// 一時停止
-			if (time_limit.GetTime() <= 0)
-			{
-				system("PAUSE");
-			}
-
-
-
-			// draw処理 //
-			// 描画開始
-			if (gp->StartDraw() == true)
-			{
-				// 敵描画
-				enemy_manager.Draw();
-
-				// UI描画
-				// time_limit
-				time_limit.Draw();
-				// score
-				score.Draw();
-			}
-			// 描画終了
-			gp->EndDraw();
+			game_scene.Draw();
 		}
 	}
 
