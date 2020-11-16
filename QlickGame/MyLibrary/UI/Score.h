@@ -14,7 +14,7 @@ public:
 	}
 
 public:
-	void AddScore(int score_number_);
+	void Add(int score_number_);
 	void Draw();
 
 private:

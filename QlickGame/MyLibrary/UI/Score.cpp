@@ -3,7 +3,7 @@
 
 #include <sstream>
 
-void Score::AddScore(int score_number_)
+void Score::Add(int score_number_)
 {
 	m_score += score_number_;
 }

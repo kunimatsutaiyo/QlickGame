@@ -90,7 +90,7 @@ bool GameScene::Collision()
 				// ¦•ÏX‰ÓŠ
 				// score‰ÁZ‚ğ‚±‚±‚Å‚·‚é‚Ì‚Å‚Í‚È‚­’Ê’m‚·‚é‚É•ÏX‚µ‚½‚¢
 				// Score‰ÁZ
-				mp_score->AddScore(1);
+				mp_score->Add(1);
 
 				return true;
 			}
