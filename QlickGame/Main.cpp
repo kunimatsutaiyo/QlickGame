@@ -16,7 +16,7 @@ int APIENTRY WinMain(
 {
 	Window window;
 	Engine engine;
-	HWND window_handle = window.MakeWindow(hInstance_, 1920, 1080, "ポチポチゲーム");
+	HWND window_handle = window.MakeWindow(hInstance_, WINDOW_WIDTH, WINDOW_HEIGHT, "ポチポチゲーム");
 	engine.InitEngine(hInstance_, window_handle);
 	Input* p_input = Input::GetInstance();
 

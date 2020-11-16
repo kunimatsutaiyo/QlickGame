@@ -12,5 +12,5 @@ void Enemy::Draw()
 		Texture::GetInstance()->GetTexture("enemy"),
 		m_pos.x, m_pos.y,
 		255,
-		60, 80);
+		m_size.x, m_size.y);
 }

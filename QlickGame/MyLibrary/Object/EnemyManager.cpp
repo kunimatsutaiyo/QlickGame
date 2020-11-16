@@ -1,6 +1,11 @@
 #include "EnemyManager.h"
+#include "../Engine/Window.h"
 
 #include <time.h>
+
+#define SURVIVAL_SECOND_TIME 5
+#define ENEMY_WIDTH 60
+#define ENEMY_HEIGHT 80
 
 bool EnemyManager::CreateEnemy()
 {
@@ -8,11 +13,11 @@ bool EnemyManager::CreateEnemy()
 	// ÉâÉìÉ_ÉÄç¿ïWÇ™Ç®Ç©ÇµÇ¢
 	srand((unsigned)time(NULL));
 	D3DXVECTOR2 rand_pos = {
-		static_cast<float>(rand() % 1920),
-		static_cast<float>(rand() % 1080)
+		static_cast<float>(rand() % WINDOW_WIDTH),
+		static_cast<float>(rand() % WINDOW_HEIGHT)
 	};
 
-	m_p_vec_enemy.push_back(new Enemy(rand_pos, 5));
+	m_p_vec_enemy.push_back(new Enemy(rand_pos, SURVIVAL_SECOND_TIME, { ENEMY_WIDTH,ENEMY_HEIGHT }));
 
 	return true;
 }

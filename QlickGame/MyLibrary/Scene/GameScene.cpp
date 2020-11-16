@@ -1,6 +1,9 @@
 #include "GameScene.h"
 #include "../Engine/Texture.h"
 
+#define INTERVAL_TIME 2
+#define GAME_END_FPS 0
+
 bool GameScene::Load()
 {
 	Texture::GetInstance()->LoadTexture("Res/free_enemy.jpg", "enemy");
@@ -12,7 +15,7 @@ void GameScene::CreateEnemyManager()
 {
 	if (mp_enemy_manager == nullptr)
 	{
-		mp_enemy_manager = new EnemyManager(2);
+		mp_enemy_manager = new EnemyManager(INTERVAL_TIME);
 	}
 }
 
@@ -46,7 +49,7 @@ void GameScene::Update()
 	mp_time_limit->Update();
 
 	// ˆêŽž’âŽ~
-	if (mp_time_limit->GetTime() <= 0)
+	if (mp_time_limit->GetTime() <= GAME_END_FPS)
 	{
 		system("PAUSE");
 	}
@@ -88,6 +91,8 @@ bool GameScene::Collision()
 				// score‰ÁŽZ‚ð‚±‚±‚Å‚·‚é‚Ì‚Å‚Í‚È‚­’Ê’m‚·‚é‚É•ÏX‚µ‚½‚¢
 				// Score‰ÁŽZ
 				mp_score->AddScore(1);
+
+				return true;
 			}
 		}
 	}
