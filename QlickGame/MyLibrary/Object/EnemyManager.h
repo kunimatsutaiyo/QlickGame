@@ -8,7 +8,7 @@
 class EnemyManager
 {
 public:
-	EnemyManager(int interval_to_gererate_, int number_of_generations_ = 100)
+	EnemyManager(int interval_to_gererate_)
 	{
 		m_interval_to_generate = interval_to_gererate_ * 60;
 		m_count_to_decrease = m_interval_to_generate;
