@@ -75,9 +75,6 @@
     <ClInclude Include="Object\EnemyManager.h">
       <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
-    <ClInclude Include="Collision\MouseAndRect.h">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClInclude>
     <ClInclude Include="UI\TimeLimit.h">
       <Filter>ソース ファイル\UI</Filter>
     </ClInclude>
@@ -86,6 +83,9 @@
     </ClInclude>
     <ClInclude Include="Scene\GameScene.h">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision\CollisionDetectionOfMouseAndRect.h">
+      <Filter>ソース ファイル\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +122,6 @@
     <ClCompile Include="Object\EnemyManager.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Collision\MouseAndRect.cpp">
-      <Filter>ソース ファイル\Collision</Filter>
-    </ClCompile>
     <ClCompile Include="UI\TimeLimit.cpp">
       <Filter>ソース ファイル\UI</Filter>
     </ClCompile>
@@ -133,6 +130,9 @@
     </ClCompile>
     <ClCompile Include="Scene\GameScene.cpp">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision\CollisionDetectionOfMouseAndRect.cpp">
+      <Filter>ソース ファイル\Collision</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

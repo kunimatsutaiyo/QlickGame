@@ -1,6 +1,6 @@
-#include "MouseAndRect.h"
+#include "CollisionDetectionOfMouseAndRect.h"
 
-bool MouseAndRect::Judgment(D3DXVECTOR2 mouse_pos_, D3DXVECTOR2 rect_pos_, D3DXVECTOR2 rect_size_)
+bool CollisionDetectionOfMouseAndRect::Judgment(D3DXVECTOR2 mouse_pos_, D3DXVECTOR2 rect_pos_, D3DXVECTOR2 rect_size_)
 {
 	float left = rect_pos_.x;
 	float right = rect_pos_.x + rect_size_.x;

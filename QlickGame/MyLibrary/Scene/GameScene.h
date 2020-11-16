@@ -4,7 +4,7 @@
 #include "../Engine/Input.h"
 #include "../Engine/Graphics.h"
 #include "../Object/EnemyManager.h"
-#include "../Collision/MouseAndRect.h"
+#include "../Collision/CollisionDetectionOfMouseAndRect.h"
 #include "../UI/TimeLimit.h"
 #include "../UI/Score.h"
 
@@ -16,7 +16,7 @@ public:
 		mp_input = Input::GetInstance();
 		mp_graphics = Graphics::GetInstance();
 
-		mp_mouse_and_rect = new MouseAndRect();
+		mp_col_mouse_and_rect = new CollisionDetectionOfMouseAndRect();
 
 		mp_enemy_manager = nullptr;
 
@@ -47,7 +47,7 @@ private:
 	Graphics* mp_graphics;
 
 	// Collision
-	MouseAndRect* mp_mouse_and_rect;
+	CollisionDetectionOfMouseAndRect* mp_col_mouse_and_rect;
 
 	// Object
 	EnemyManager* mp_enemy_manager;

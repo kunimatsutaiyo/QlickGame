@@ -80,7 +80,7 @@ bool GameScene::Collision()
 
 		for (size_t i = 0; i < vec_enemy.size(); i++)
 		{
-			if (mp_mouse_and_rect->Judgment(mouse_pos, vec_enemy[i]->GetPos(), vec_enemy[i]->GetSize()))
+			if (mp_col_mouse_and_rect->Judgment(mouse_pos, vec_enemy[i]->GetPos(), vec_enemy[i]->GetSize()))
 			{
 				mp_enemy_manager->PartDelete(i);
 
