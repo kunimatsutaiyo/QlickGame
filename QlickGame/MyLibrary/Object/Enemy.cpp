@@ -3,7 +3,7 @@
 
 void Enemy::Update()
 {
-	m_survival_time--;
+	m_survival_fps_time--;
 }
 
 void Enemy::Draw()

@@ -5,16 +5,16 @@
 
 void TimeLimit::Update()
 {
-	m_time_limit--;
-	if (m_time_limit <= 0)
+	m_fps--;
+	if (m_fps <= 0)
 	{
-		m_time_limit = 0;
+		m_fps = 0;
 	}
 }
 
 void TimeLimit::Draw()
 {
-	int seconds = m_time_limit / 60;
+	int seconds = m_fps / 60;
 
 	std::ostringstream oss;
 	oss << "Time Limit : " << seconds;

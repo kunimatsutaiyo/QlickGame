@@ -6,10 +6,10 @@
 class Enemy
 {
 public:
-	Enemy(D3DXVECTOR2 pos_, int survival_time_, D3DXVECTOR2 size_)
+	Enemy(D3DXVECTOR2 pos_, int survival_seconds_time_, D3DXVECTOR2 size_)
 	{
 		m_pos = pos_;
-		m_survival_time = survival_time_ * 60;
+		m_survival_fps_time = survival_seconds_time_ * 60;
 		m_size = size_;
 	}
 	~Enemy()
@@ -28,12 +28,12 @@ public:
 		return m_size;
 	}
 	int GetSurvivalTime() {
-		return m_survival_time;
+		return m_survival_fps_time;
 	}
 
 private:
 	D3DXVECTOR2 m_pos;
-	int m_survival_time;
+	int m_survival_fps_time;
 	D3DXVECTOR2 m_size;
 
 };

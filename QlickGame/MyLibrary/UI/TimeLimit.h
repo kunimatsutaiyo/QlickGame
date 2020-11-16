@@ -6,7 +6,7 @@ class TimeLimit
 public:
 	TimeLimit(int seconds_)
 	{
-		m_time_limit = seconds_ * 60;
+		m_fps = seconds_ * 60;
 	}
 	~TimeLimit()
 	{
@@ -18,11 +18,11 @@ public:
 	void Draw();
 
 	int GetTime() {
-		return m_time_limit;
+		return m_fps;
 	}
 
 private:
-	int m_time_limit;
+	int m_fps;
 
 };
 
