@@ -10,7 +10,7 @@ public:
 	~CollisionDetectionOfMouseAndRect() {}
 
 public:
-	bool Judgment(D3DXVECTOR2 mouse_pos_, D3DXVECTOR2 rect_pos_, D3DXVECTOR2 rect_size_);
+	static bool Judgment(D3DXVECTOR2 mouse_pos_, D3DXVECTOR2 rect_pos_, D3DXVECTOR2 rect_size_);
 
 };
 
