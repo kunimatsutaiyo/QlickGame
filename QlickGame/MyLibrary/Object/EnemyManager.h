@@ -25,7 +25,7 @@ public:
 	void PartDelete(int delete_number_);
 
 	std::vector<Enemy*> GetEnemy() {
-		return m_p_vec_enemy;
+		return mp_vec_enemy;
 	}
 
 private:
@@ -34,7 +34,7 @@ private:
 	void AllDelete();
 
 private:
-	std::vector<Enemy*> m_p_vec_enemy;
+	std::vector<Enemy*> mp_vec_enemy;
 	int m_interval_to_generate;			// ¶¬‚·‚éŠÔŠu
 	int m_count_to_decrease;			// Œ¸‚ç‚·ƒJƒEƒ“ƒg
 

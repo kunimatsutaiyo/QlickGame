@@ -17,7 +17,7 @@ bool EnemyManager::CreateEnemy()
 		static_cast<float>(rand() % WINDOW_HEIGHT)
 	};
 
-	m_p_vec_enemy.push_back(new Enemy(rand_pos, SURVIVAL_SECOND_TIME, { ENEMY_WIDTH,ENEMY_HEIGHT }));
+	mp_vec_enemy.push_back(new Enemy(rand_pos, SURVIVAL_SECOND_TIME, { ENEMY_WIDTH,ENEMY_HEIGHT }));
 
 	return true;
 }
@@ -33,20 +33,20 @@ void EnemyManager::Update()
 	}
 
 	// çXêV
-	for (size_t i = 0; i < m_p_vec_enemy.size(); i++)
+	for (size_t i = 0; i < mp_vec_enemy.size(); i++)
 	{
-		if (m_p_vec_enemy[i] != nullptr)
+		if (mp_vec_enemy[i] != nullptr)
 		{
-			m_p_vec_enemy[i]->Update();
+			mp_vec_enemy[i]->Update();
 		}
 	}
 
 	// çÌèú
-	for (size_t i = 0; i < m_p_vec_enemy.size(); i++)
+	for (size_t i = 0; i < mp_vec_enemy.size(); i++)
 	{
-		if (m_p_vec_enemy[i] != nullptr)
+		if (mp_vec_enemy[i] != nullptr)
 		{
-			if (m_p_vec_enemy[i]->GetSurvivalTime() <= 0)
+			if (mp_vec_enemy[i]->GetSurvivalTime() <= 0)
 			{
 				PartDelete(i);
 			}
@@ -56,35 +56,35 @@ void EnemyManager::Update()
 
 void EnemyManager::Draw()
 {
-	for (size_t i = 0; i < m_p_vec_enemy.size(); i++)
+	for (size_t i = 0; i < mp_vec_enemy.size(); i++)
 	{
-		if (m_p_vec_enemy[i] != nullptr)
+		if (mp_vec_enemy[i] != nullptr)
 		{
-			m_p_vec_enemy[i]->Draw();
+			mp_vec_enemy[i]->Draw();
 		}
 	}
 }
 
 void EnemyManager::PartDelete(int delete_number_)
 {
-	if (m_p_vec_enemy[delete_number_] != nullptr)
+	if (mp_vec_enemy[delete_number_] != nullptr)
 	{
-		delete m_p_vec_enemy[delete_number_];
-		m_p_vec_enemy[delete_number_] = nullptr;
+		delete mp_vec_enemy[delete_number_];
+		mp_vec_enemy[delete_number_] = nullptr;
 
-		auto itr = m_p_vec_enemy.begin() + delete_number_;
-		m_p_vec_enemy.erase(itr);
+		auto itr = mp_vec_enemy.begin() + delete_number_;
+		mp_vec_enemy.erase(itr);
 	}
 }
 
 void EnemyManager::AllDelete()
 {
-	for (size_t i = 0; i < m_p_vec_enemy.size(); i++)
+	for (size_t i = 0; i < mp_vec_enemy.size(); i++)
 	{
-		if (m_p_vec_enemy[i] != nullptr)
+		if (mp_vec_enemy[i] != nullptr)
 		{
-			delete m_p_vec_enemy[i];
-			m_p_vec_enemy[i] = nullptr;
+			delete mp_vec_enemy[i];
+			mp_vec_enemy[i] = nullptr;
 		}
 	}
 }
