@@ -134,8 +134,5 @@
     <ClCompile Include="Collision\CollisionDetectionOfMouseAndRect.cpp">
       <Filter>ソース ファイル\Collision</Filter>
     </ClCompile>
-    <ClCompile Include="Math\Calculation.cpp">
-      <Filter>ソース ファイル\Math</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
