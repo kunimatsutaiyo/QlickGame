@@ -27,7 +27,6 @@
     <ClInclude Include="Engine\Sound.h" />
     <ClInclude Include="Engine\Texture.h" />
     <ClInclude Include="Engine\Window.h" />
-    <ClInclude Include="Math\Calculation.h" />
     <ClInclude Include="Object\Enemy.h" />
     <ClInclude Include="Object\EnemyManager.h" />
     <ClInclude Include="Scene\GameScene.h" />

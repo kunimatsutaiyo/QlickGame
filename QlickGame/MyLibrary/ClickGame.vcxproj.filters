@@ -34,9 +34,6 @@
     <Filter Include="ソース ファイル\Scene">
       <UniqueIdentifier>{f488357b-7c01-44a0-b4e7-e8218384a9ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソース ファイル\Math">
-      <UniqueIdentifier>{17b0e38a-f4eb-4e94-8010-ef92e39934f4}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -89,9 +86,6 @@
     </ClInclude>
     <ClInclude Include="Collision\CollisionDetectionOfMouseAndRect.h">
       <Filter>ソース ファイル\Collision</Filter>
-    </ClInclude>
-    <ClInclude Include="Math\Calculation.h">
-      <Filter>ソース ファイル\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
